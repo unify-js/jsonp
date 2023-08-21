@@ -1,6 +1,6 @@
 {
   "name": "@unify-js/jsonp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -30,6 +30,7 @@
     "@vue/test-utils": "^2.4.1",
     "@vue/tsconfig": "^0.4.0",
     "cypress": "^12.17.4",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.47.0",
     "eslint-plugin-cypress": "^2.14.0",
     "eslint-plugin-vue": "^9.17.0",
@@ -45,5 +46,10 @@
   },
   "peerDependencies": {
     "lodash-es": "^4.17.21"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
