@@ -20,7 +20,6 @@ test('jsonp', async () => {
 
     return response
   })
-  console.log('🚀 ~ file: index.test.ts:23 ~ response ~ response:', response)
 
   expect(response.userId).toBe(1)
 })
