@@ -1,23 +1,27 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import jsonp from "./lib";
+import { onMounted, ref } from 'vue'
+import jsonp from './lib'
 
-const data = ref<string>("");
+const data = ref<string>('')
 
-onMounted(() => {
-  jsonp<{
-    userId: number;
-    id: number;
-    title: string;
-    completed: boolean;
-  }>("https://jsonplaceholder.typicode.com/todos/1")
-    .then((res) => {
-      data.value = JSON.stringify(res);
+onMounted(async () => {
+  try {
+    interface Response {
+      userId: number
+      id: number
+      title: string
+      completed: boolean
+    }
+    const res = await jsonp<Response>('https://jsonplaceholder.typicode.com/todos/1', {
+      params: {
+        test: 'a'
+      }
     })
-    .catch((err) => {
-      data.value = err;
-    });
-});
+    data.value = JSON.stringify(res)
+  } catch (error) {
+    data.value = error as string
+  }
+})
 </script>
 
 <template>
