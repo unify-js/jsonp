@@ -13,6 +13,8 @@
     "build": "vue-tsc --emitDeclarationOnly && vite build",
     "preview": "vite preview"
   },
+  "license": "MIT",
+  "description": "a JSONP implementation",
   "dependencies": {
     "vue": "^3.3.4"
   },
