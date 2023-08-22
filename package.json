@@ -2,9 +2,15 @@
   "name": "@unify-js/jsonp",
   "version": "1.0.0",
   "type": "module",
+  "main": "dist/jsonp.js",
+  "types": "types/lib/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc --emitDeclarationOnly && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
