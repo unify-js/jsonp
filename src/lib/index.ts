@@ -10,19 +10,20 @@ function clear(script: HTMLScriptElement, uniqueId: string, timer: ReturnType<ty
   Reflect.deleteProperty(window, uniqueId)
 }
 
+interface Options {
+  /** query parameters */
+  params?: Record<string, string>
+  /** Timeout in milliseconds. default is 5000ms */
+  timeout?: number
+}
+
 /**
  * use jsonp to request data
  * @param url
  * @param options
  * @returns
  */
-export default function request<Response>(
-  url: string,
-  options: {
-    params?: Record<string, string>
-    timeout?: number
-  } = {}
-): Promise<Response> {
+export default function request<Response>(url: string, options: Options = {}): Promise<Response> {
   const { params = {}, timeout = 5000 } = options
 
   return new Promise((resolve, reject) => {
