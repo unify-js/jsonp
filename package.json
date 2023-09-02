@@ -1,6 +1,6 @@
 {
   "name": "@unify-js/jsonp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/jsonp.js",
   "types": "types/lib/index.d.ts",
